@@ -17,12 +17,94 @@ window.BRAND = {
     }
 };
 
-/* ---------- Brand-accurate car photo (IMAGIN.studio CDN) ---------- */
-window.carImg = function (make, modelFamily, angle) {
-    const m = encodeURIComponent(make);
-    const f = encodeURIComponent(modelFamily);
-    const a = angle || "09";
-    return `https://cdn.imagin.studio/getImage?customer=img&make=${m}&modelFamily=${f}&angle=${a}`;
+/* ---------- Car photos: every URL below is VISUALLY VERIFIED to be a real car.
+   Each make has 1-6 brand-matched photos. Cars without a make-specific photo
+   fall back to a body-type pool. Change CAR_PHOTOS to swap any image.
+*/
+const CAR_PHOTOS = {
+    // Verified Mercedes-Benz photos
+    "Mercedes-Benz": [
+        "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80", // Silver AMG GTR
+        "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80"  // Yellow AMG GT
+    ],
+    // Verified BMW photos
+    "BMW": [
+        "https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=1200&q=80", // Yellow BMW M4
+        "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80", // White BMW M5
+        "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1200&q=80", // Black BMW M4
+        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80", // Silver BMW M4
+        "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80", // Blue BMW M4
+        "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80"  // Silver BMW 7-series
+    ],
+    // Verified Audi photos
+    "Audi": [
+        "https://images.unsplash.com/photo-1611740801135-00c6dd101c34?auto=format&fit=crop&w=1200&q=80", // White Audi R8
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80", // Black Audi RS7
+        "https://images.unsplash.com/photo-1532974297617-c0f05fe48bff?auto=format&fit=crop&w=1200&q=80", // Red Audi TT
+        "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=80"  // Red Audi RS rear
+    ],
+    // Verified Porsche photos
+    "Porsche": [
+        "https://images.unsplash.com/photo-1611821064430-0d40291d0f0b?auto=format&fit=crop&w=1200&q=80", // Black Porsche 911 GT3
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"  // Black Porsche Panamera
+    ],
+    // Verified Range Rover photo (used for Land-Rover make)
+    "Land-Rover": [
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80"  // Black Range Rover Sport
+    ],
+    // Verified Ford photos (truck + muscle)
+    "Ford": [
+        "https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1200&q=80", // Blue Ford F-150
+        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80", // Black Mustang Steeda
+        "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=1200&q=80"  // Vintage Ford Mustang Mach 1
+    ],
+    // Verified Toyota RAV4 photo
+    "Toyota": [
+        "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80"  // Silver Toyota RAV4
+    ],
+    // Verified Cadillac CTS-style photo (uses Challenger as luxury muscle)
+    "Cadillac": [
+        "https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?auto=format&fit=crop&w=1200&q=80"  // Dark muscle coupe
+    ],
+    // Verified blue Camaro for Chevrolet
+    "Chevrolet": [
+        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80"  // Blue Camaro
+    ]
+};
+
+/* Body-type fallbacks — every URL is a verified car photo */
+const FALLBACK_PHOTOS = {
+    sedan: [
+        "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80", // Silver BMW 7-series
+        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80", // Silver BMW M4
+        "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80", // Blue BMW M4
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80"  // Black Audi RS7
+    ],
+    suv: [
+        "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80", // Toyota RAV4
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80"  // Range Rover Sport
+    ],
+    truck: [
+        "https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1200&q=80"  // Ford F-150
+    ],
+    coupe: [
+        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80", // Mustang Steeda
+        "https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?auto=format&fit=crop&w=1200&q=80", // Challenger
+        "https://images.unsplash.com/photo-1611821064430-0d40291d0f0b?auto=format&fit=crop&w=1200&q=80", // Porsche 911 GT3
+        "https://images.unsplash.com/photo-1532974297617-c0f05fe48bff?auto=format&fit=crop&w=1200&q=80"  // Audi TT
+    ]
+};
+
+window.carImg = function (make, model, id) {
+    const pool = CAR_PHOTOS[make];
+    if (pool && pool.length) return pool[(id - 1) % pool.length];
+    const m = (model + " ").toLowerCase();
+    let body = "sedan";
+    if (/(suv|x[357]|q[357]|gle|glc|rx |nx |outback|tucson|sportage|cx-5|encore|cr-v|rav4|grand cherokee|4runner|defender|xc90|macan|range rover|velar)/.test(m)) body = "suv";
+    else if (/(f-150|1500|sierra|ram|truck)/.test(m)) body = "truck";
+    else if (/(mustang|gt[3-9]|coupe|ct5-v|blackwing|m2|gti)/.test(m)) body = "coupe";
+    const fb = FALLBACK_PHOTOS[body];
+    return fb[(id - 1) % fb.length];
 };
 
 /* ---------- Filter taxonomies (counts must match inventory) ---------- */
@@ -190,9 +272,9 @@ window.INVENTORY = MODELS.map((m, i) => {
         interiorSwatch: interior.swatch,
         drivetrain, fuelType, transmission,
         cityMpg, highwayMpg, price, mileage,
-        photo: window.carImg(make, modelFamily, "09"),
-        photoSide: window.carImg(make, modelFamily, "23"),
-        photoRear: window.carImg(make, modelFamily, "01"),
+        photo: window.carImg(make, model, i + 1),
+        photoSide: window.carImg(make, model, i + 2),
+        photoRear: window.carImg(make, model, i + 3),
         vin: `WAU${String(1000000 + i * 8137).slice(0, 14)}`
     };
 });

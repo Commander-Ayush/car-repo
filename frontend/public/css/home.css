@@ -100,9 +100,8 @@
     aspect-ratio: 4 / 3; overflow: hidden;
     background: var(--c-vanilla-2);
     position: relative;
-    display: grid; place-items: center;
 }
-.feat-photo img { width: 100%; height: 100%; object-fit: contain; transition: transform 700ms ease; }
+.feat-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms ease; }
 .feat-card:hover .feat-photo img { transform: scale(1.05); }
 .feat-tag {
     position: absolute; top: 14px; left: 14px;
