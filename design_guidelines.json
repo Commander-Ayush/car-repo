@@ -1,0 +1,99 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 5 (Luxury - Light Variation)",
+  "emotional_tone": "White, Golden, Calm energy. Premium, exclusive, and approachable.",
+  "typography": {
+    "font_family": {
+      "headings": "Playfair Display, serif",
+      "body": "Outfit, sans-serif"
+    },
+    "pairing_strategy": "The 'Old Money Tech' approach. Classic, highly legible serif for prominent headings with tight tracking, paired with a modern, sterile geometric sans-serif for body copy and data labels.",
+    "scale": {
+      "h1": "text-5xl lg:text-6xl tracking-tight leading-none font-medium",
+      "h2": "text-3xl lg:text-4xl tracking-tight leading-snug font-medium",
+      "h3": "text-2xl tracking-tight leading-snug",
+      "h4": "text-lg uppercase tracking-[0.2em] font-semibold",
+      "body": "text-base leading-relaxed",
+      "small_labels": "text-xs uppercase tracking-widest font-semibold"
+    }
+  },
+  "colors": {
+    "primary": "#D4AF37",
+    "primary_hover": "#C5A059",
+    "background_base": "#FAFAFA",
+    "background_surface": "#F3EBE1",
+    "accent_dark": "#0B132B",
+    "accent_dark_hover": "#1A2238",
+    "text_primary": "#0A0A0A",
+    "text_secondary": "#4A4A4A",
+    "border_subtle": "rgba(212, 175, 55, 0.2)",
+    "white": "#FFFFFF"
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous Spacing Philosophy. Use 2-3x more spacing than typical designs to convey luxury and calm.",
+    "container_padding": "px-6 md:px-12 lg:px-24 py-16 lg:py-24",
+    "grid_strategy": {
+      "general": "Bento Grid Mode A for promotional sections (Services, Home). High asymmetry.",
+      "inventory": "Control Room Grid Mode B for Used Cars page. 1/4 sidebar for filters, 3/4 for car grid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3)."
+    }
+  },
+  "surfaces": {
+    "header": "Glassmorphism: bg-[#FAFAFA]/80 backdrop-blur-xl border-b border-[#D4AF37]/20. Must be sticky top-0 z-50.",
+    "cards_inventory": "Neumorphism tactile variant: bg-[#FFFFFF] shadow-sm hover:shadow-lg transition-all border border-black/5 rounded-none.",
+    "buttons": {
+      "primary": "bg-[#D4AF37] text-[#0B132B] hover:bg-[#C5A059] rounded-none px-8 py-4 font-semibold tracking-wider uppercase text-sm",
+      "secondary": "bg-transparent border border-[#0B132B] text-[#0B132B] hover:bg-[#0B132B] hover:text-[#FAFAFA] rounded-none px-8 py-4 font-semibold tracking-wider uppercase text-sm"
+    }
+  },
+  "components": {
+    "navigation": "Clear links, prominent 'Book a Test Drive' primary CTA in nav. Do not hide on desktop.",
+    "hero": "Full-width layout or split-screen. If full width image, use bg-gradient-to-r from-[#FAFAFA]/90 via-[#FAFAFA]/60 to-transparent on the left to ensure text legibility.",
+    "inventory_sidebar_filters": "Use Shadcn Accordions and Checkboxes. Sections: Condition (Pre-Owned 44), Exterior Color, Interior Color, Drivetrain, Fuel Type, City/Hwy MPG, Transmission. Background should be #F3EBE1 (Vanilla).",
+    "inventory_card": "Image on top, Title, Key Specs (Mileage, Drivetrain, MPG) as small labels, Price in prominent Serif font. CTA 'View Details' or 'Test Drive'.",
+    "forms": "Use Shadcn Inputs and Selects. Restyle borders to use focus:ring-[#D4AF37] focus:border-[#D4AF37] rounded-none. bg-white.",
+    "testimonials": "Carousel or Bento grid. Use large Serif quotes. bg-[#0B132B] text-[#FAFAFA] for high contrast section.",
+    "pricing": "Minimalist columns. Border-collapse style grid or sleek list. Highlight premium tiers with golden accents."
+  },
+  "media": {
+    "hero_image": {
+      "url": "https://images.pexels.com/photos/33327689/pexels-photo-33327689.jpeg",
+      "description": "A stunning white luxury car displayed in a modern showroom setting."
+    },
+    "inventory_cars": [
+      {
+        "url": "https://images.unsplash.com/photo-1611740801135-00c6dd101c34?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMGx1eHVyeSUyMGNhcnxlbnwwfHx8fDE3ODA2NTU5OTR8MA&ixlib=rb-4.1.0&q=85",
+        "description": "White Audi R8"
+      },
+      {
+        "url": "https://images.pexels.com/photos/18108314/pexels-photo-18108314.jpeg",
+        "description": "Sleek luxury cars showcased in a stylish, modern automotive dealership."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1519078313888-5a8068170f8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwyfHx3aGl0ZSUyMGx1eHVyeSUyMGNhcnxlbnwwfHx8fDE3ODA2NTU5OTR8MA&ixlib=rb-4.1.0&q=85",
+        "description": "White and black coupe beside white building"
+      }
+    ],
+    "interior_dealership": {
+      "url": "https://images.pexels.com/photos/16176576/pexels-photo-16176576.jpeg",
+      "description": "Sleek Bentley cars showcased in a contemporary indoor dealership space"
+    },
+    "testimonial_portrait": {
+      "url": "https://images.unsplash.com/photo-1606143412458-acc5f86de897?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMGVsZWdhbnR8ZW58MHx8fHwxNzgwNjU1OTk0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Elegant portrait for customer testimonials"
+    }
+  },
+  "micro_interactions": {
+    "hover_states": "All cards slightly lift (-translate-y-1) with increased shadow. Golden buttons shift to slightly darker gold.",
+    "image_hover": "Subtle scale (scale-105) inside overflow-hidden container for vehicle cards."
+  },
+  "testing_attributes": "All interactive elements (filters, 'Book a Test Drive' buttons, form submits, nav links) MUST include role-based data-testid attributes (e.g., data-testid='nav-inventory-link', data-testid='filter-exterior-color').",
+  "instructions_to_main_agent": [
+    "Build out the application using React, Tailwind CSS, and Shadcn UI primitives.",
+    "Ensure all 9 sections are implemented: Nav, Hero, Services, Pricing, Testimonials, Contact, Buy Used Cars, Sell Used Cars, Finance.",
+    "Implement the full sidebar filter in 'Buy Used Cars' including Condition, Exterior Color, Interior Color, Drivetrain, Fuel Type, MPG buckets, and Transmission as requested in the prompt.",
+    "Use Playfair Display for headings and Outfit for body text.",
+    "The primary CTA 'Book a Test Drive' should trigger a modal or navigate to a contact form.",
+    "Use the color palette strictly: Creamy (#FAFAFA), Vanilla (#F3EBE1), Golden (#D4AF37), and Dark Blue (#0B132B) for high contrast sections.",
+    "Avoid standard border radiuses. Use rounded-none for a sharper, more premium editorial feel."
+  ]
+}
