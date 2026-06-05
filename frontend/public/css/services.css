@@ -1,0 +1,45 @@
+/* services.css */
+.services { padding: 96px 32px; max-width: var(--container); margin: 0 auto; }
+.services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--c-line);
+    border: 1px solid var(--c-line);
+}
+.service-card {
+    background: var(--c-cream);
+    padding: 48px 40px;
+    display: flex; flex-direction: column;
+    gap: 14px;
+    transition: background-color 280ms ease;
+}
+.service-card:hover { background: var(--c-vanilla); }
+.service-ico { font-size: 30px; color: var(--c-gold); margin-bottom: 12px; }
+.service-card h3 { font-family: var(--f-serif); font-weight: 500; font-size: 1.7rem; margin: 0; }
+.service-card p { color: var(--c-ink-2); margin: 0; line-height: 1.65; }
+.service-link {
+    margin-top: 16px;
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--c-navy); font-weight: 600;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: gap 220ms ease, color 220ms ease;
+}
+.service-card:hover .service-link { gap: 18px; color: var(--c-gold); }
+
+.cta-strip {
+    margin-top: 64px;
+    background: var(--c-navy); color: var(--c-cream);
+    padding: 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px; flex-wrap: wrap;
+}
+.cta-strip .small-label { color: var(--c-gold-soft); }
+.cta-strip .section-title { color: var(--c-cream); margin: 8px 0 0; }
+
+@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) {
+    .services { padding: 56px 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 32px 24px; }
+    .cta-strip { padding: 32px 24px; }
+}

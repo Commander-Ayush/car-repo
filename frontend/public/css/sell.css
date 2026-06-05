@@ -1,0 +1,37 @@
+/* sell.css */
+.sell { background: var(--c-vanilla); padding: 96px 32px; }
+.sell-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 64px; align-items: start;
+    max-width: var(--container); margin: 0 auto;
+}
+.steps { list-style: none; padding: 0; margin: 32px 0 36px; display: grid; gap: 28px; }
+.steps li { display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start; }
+.step-num {
+    font-family: var(--f-serif); font-size: 2rem; color: var(--c-gold);
+    line-height: 1; padding-top: 4px;
+    border-top: 1px solid var(--c-gold);
+    width: 48px;
+}
+.steps h4 {
+    font-family: var(--f-serif); font-weight: 500;
+    font-size: 1.25rem; margin: 0 0 6px;
+}
+.steps p { margin: 0; color: var(--c-ink-2); font-size: 0.96rem; line-height: 1.55; }
+.bullets {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 12px;
+    border-top: 1px solid var(--c-line-gold); padding-top: 24px;
+}
+.bullets li { display: flex; align-items: center; gap: 14px; font-size: 0.98rem; color: var(--c-ink-2); }
+.bullets li i { color: var(--c-gold); }
+
+.sell-form {
+    background: var(--c-white);
+    border: 1px solid var(--c-line-gold);
+    padding: 40px;
+}
+.sell-form h3 { font-family: var(--f-serif); font-weight: 500; font-size: 1.6rem; margin: 0 0 24px; }
+
+@media (max-width: 1024px) { .sell-grid { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 700px) { .sell { padding: 56px 20px; } .sell-form { padding: 28px; } }

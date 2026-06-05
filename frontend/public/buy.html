@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Buy a pre-owned luxury vehicle. Filter our 44-car collection by exterior color, drivetrain, fuel type, MPG, transmission and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/buy.css" />
+    <title data-bind data-title-suffix="Buy Used Cars">Maison Avenir</title>
+    <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+</head>
+<body>
+<div id="root" style="display:none"></div>
+<div id="nav-root"></div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="crumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Buy Used Cars</span></div>
+        <h1>Buy used.</h1>
+        <p>Forty-four hand-selected automobiles. Filter by what matters to you.</p>
+    </div>
+</section>
+
+<section class="inventory" data-testid="inventory-section">
+    <div class="inventory-layout">
+        <aside class="filters" data-testid="inventory-filters">
+            <div class="filters-head">
+                <h3>Refine</h3>
+                <button class="filters-reset" data-action="reset-filters" data-testid="filter-reset-btn">Reset all</button>
+            </div>
+            <details class="filter-block" open>
+                <summary><span>Condition</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options" data-filter-group="condition" data-testid="filter-condition">
+                    <label class="check"><input type="checkbox" value="Pre-Owned" data-testid="filter-condition-preowned" /><span>Pre-Owned</span><em class="count">44</em></label>
+                </div>
+            </details>
+            <details class="filter-block"><summary><span>Exterior Color</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options scroll" data-filter-group="exteriorColor" data-testid="filter-exterior-color"></div></details>
+            <details class="filter-block"><summary><span>Interior Color</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options scroll" data-filter-group="interiorColor" data-testid="filter-interior-color"></div></details>
+            <details class="filter-block"><summary><span>Drivetrain</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options" data-filter-group="drivetrain" data-testid="filter-drivetrain"></div></details>
+            <details class="filter-block"><summary><span>Fuel Type</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options" data-filter-group="fuelType" data-testid="filter-fuel-type"></div></details>
+            <details class="filter-block"><summary><span>City MPG</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options" data-filter-group="cityMpg" data-testid="filter-city-mpg"></div></details>
+            <details class="filter-block"><summary><span>Highway MPG</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options" data-filter-group="highwayMpg" data-testid="filter-highway-mpg"></div></details>
+            <details class="filter-block"><summary><span>Transmission</span><i class="fa-solid fa-plus"></i></summary>
+                <div class="filter-options" data-filter-group="transmission" data-testid="filter-transmission"></div></details>
+        </aside>
+
+        <div class="inventory-main">
+            <div class="inventory-toolbar">
+                <div class="result-count">
+                    <strong id="result-count" data-testid="result-count">44</strong><span>vehicles available</span>
+                </div>
+                <label class="sort-label">Sort
+                    <select id="sort-select" data-testid="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-asc">Price &mdash; Low to High</option>
+                        <option value="price-desc">Price &mdash; High to Low</option>
+                        <option value="year-desc">Year &mdash; Newest</option>
+                        <option value="mileage-asc">Mileage &mdash; Lowest</option>
+                    </select>
+                </label>
+            </div>
+            <div class="inventory-grid" id="inventory-grid" data-testid="inventory-grid"></div>
+            <div class="empty-state" id="empty-state" style="display:none" data-testid="empty-state">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <h4>No vehicles match those filters.</h4>
+                <p>Try widening your selection or reset the filters.</p>
+                <button class="btn btn-ghost" data-action="reset-filters">Reset filters</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/buy.js"></script>
+</body>
+</html>

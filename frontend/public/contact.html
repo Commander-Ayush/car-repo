@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Visit us by appointment. Direct line for buyers and sellers." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <title data-bind data-title-suffix="Contact">Maison Avenir</title>
+    <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+</head>
+<body>
+<div id="root" style="display:none"></div>
+<div id="nav-root"></div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="crumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Contact</span></div>
+        <h1>By appointment, always.</h1>
+        <p>Our showroom is open six days a week. Same-day appointments are usually possible.</p>
+    </div>
+</section>
+
+<section class="contact" data-testid="contact-section">
+    <div class="contact-grid">
+        <div class="contact-copy">
+            <span class="small-label">Visit Us</span>
+            <h2 class="section-title">Step inside the showroom.</h2>
+            <div class="contact-block">
+                <div>
+                    <span class="small-label">Showroom</span>
+                    <p data-bind="address">9472 Wilshire Boulevard<br/>Beverly Hills, California 90212</p>
+                </div>
+                <div>
+                    <span class="small-label">Direct line</span>
+                    <p><a data-bind="phone" data-bind-href="tel:phone">+1 (310) 555-0142</a></p>
+                </div>
+                <div>
+                    <span class="small-label">Email</span>
+                    <p><a data-bind="email" data-bind-href="mailto:email">concierge@maisonavenir.com</a></p>
+                </div>
+                <div>
+                    <span class="small-label">Hours</span>
+                    <p>Mon &mdash; Sat &middot; 9:00 &ndash; 19:00<br/>Sunday &middot; By appointment</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <img src="https://images.pexels.com/photos/16176576/pexels-photo-16176576.jpeg" alt="Maison Avenir showroom" />
+                <div class="map-overlay"><i class="fa-solid fa-location-dot"></i> <span data-bind="address">9472 Wilshire Boulevard</span></div>
+            </div>
+        </div>
+        <form class="contact-form" id="contact-form" data-testid="contact-form" novalidate>
+            <h3>Send a message</h3>
+            <div class="form-row two">
+                <div class="field"><label>Name</label><input required name="name" data-testid="contact-name" /></div>
+                <div class="field"><label>Email</label><input required type="email" name="email" data-testid="contact-email" /></div>
+            </div>
+            <div class="field"><label>Phone</label><input name="phone" data-testid="contact-phone" /></div>
+            <div class="field"><label>What can we help with?</label>
+                <select name="topic" data-testid="contact-topic">
+                    <option>General Enquiry</option><option>Buying</option><option>Selling</option><option>Financing</option><option>Service Plan</option>
+                </select>
+            </div>
+            <div class="field"><label>Message</label><textarea required rows="5" name="message" data-testid="contact-message"></textarea></div>
+            <button type="submit" class="btn btn-primary block" data-testid="contact-submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/contact.js"></script>
+</body>
+</html>

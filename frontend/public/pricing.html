@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ongoing protection plans, transparently priced." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/pricing.css" />
+    <title data-bind data-title-suffix="Service Plans">Maison Avenir</title>
+    <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+</head>
+<body>
+<div id="root" style="display:none"></div>
+<div id="nav-root"></div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="crumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Pricing</span></div>
+        <h1>After the keys change hands.</h1>
+        <p>Ongoing protection plans, transparently priced. Cancel anytime.</p>
+    </div>
+</section>
+
+<section class="pricing" data-testid="pricing-section">
+    <div class="pricing-grid">
+        <article class="price-card" data-testid="price-card">
+            <h3>Essential</h3>
+            <div class="price"><span class="amt">$49</span><span class="per">/ month</span></div>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Two annual details</li>
+                <li><i class="fa-solid fa-check"></i> Tyre rotation &amp; pressure checks</li>
+                <li><i class="fa-solid fa-check"></i> Roadside assistance (24/7)</li>
+                <li><i class="fa-solid fa-check"></i> 10% off accessories</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost block" data-testid="select-essential">Select</a>
+        </article>
+        <article class="price-card featured" data-testid="price-card">
+            <span class="ribbon">Most Selected</span>
+            <h3>Signature</h3>
+            <div class="price"><span class="amt">$129</span><span class="per">/ month</span></div>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Four annual details + paint correction</li>
+                <li><i class="fa-solid fa-check"></i> Annual ceramic top-up</li>
+                <li><i class="fa-solid fa-check"></i> Loaner vehicle on service days</li>
+                <li><i class="fa-solid fa-check"></i> Pickup &amp; drop-off (25 mi)</li>
+                <li><i class="fa-solid fa-check"></i> 20% off accessories</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary block" data-testid="select-signature">Select</a>
+        </article>
+        <article class="price-card" data-testid="price-card">
+            <h3>Atelier</h3>
+            <div class="price"><span class="amt">$299</span><span class="per">/ month</span></div>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Unlimited details &amp; PPF top-ups</li>
+                <li><i class="fa-solid fa-check"></i> Extended limited warranty</li>
+                <li><i class="fa-solid fa-check"></i> Concierge service appointments</li>
+                <li><i class="fa-solid fa-check"></i> Enclosed transport (4 trips / yr)</li>
+                <li><i class="fa-solid fa-check"></i> 30% off accessories</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost block" data-testid="select-atelier">Select</a>
+        </article>
+    </div>
+
+    <div class="faq">
+        <h2 class="section-title">Common questions</h2>
+        <details class="faq-q"><summary>Can I cancel anytime?<i class="fa-solid fa-plus"></i></summary><p>Yes. Plans are month-to-month with no cancellation fees.</p></details>
+        <details class="faq-q"><summary>What counts as a "detail"?<i class="fa-solid fa-plus"></i></summary><p>A full exterior wash, hand polish, wheel decontamination, interior vacuum, leather conditioning, and glass treatment. Approximately three hours of studio time.</p></details>
+        <details class="faq-q"><summary>Is the warranty manufacturer-backed?<i class="fa-solid fa-plus"></i></summary><p>The Atelier extended warranty is third-party backed, underwritten by Zurich. Coverage runs alongside any remaining manufacturer warranty.</p></details>
+        <details class="faq-q"><summary>What's the service radius?<i class="fa-solid fa-plus"></i></summary><p>Pickup &amp; drop-off covers 25 miles from our showroom for Signature. Atelier extends to 60 miles plus 4 enclosed-transport trips per year, continental US.</p></details>
+    </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/common.js"></script>
+</body>
+</html>

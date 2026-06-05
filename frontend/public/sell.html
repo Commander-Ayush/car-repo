@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Sell your car to Maison Avenir. Written offer within 24 hours, payment within 48. No haggling." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/sell.css" />
+    <title data-bind data-title-suffix="Sell Your Car">Maison Avenir</title>
+    <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+</head>
+<body>
+<div id="root" style="display:none"></div>
+<div id="nav-root"></div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="crumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Sell Used Cars</span></div>
+        <h1>Sell with quiet confidence.</h1>
+        <p>Receive a written offer within 24 hours. Payment within 48. No haggling, no obligation &mdash; just a fair number based on auction comps and current market data.</p>
+    </div>
+</section>
+
+<section class="sell" data-testid="sell-section">
+    <div class="sell-grid">
+        <div class="sell-copy">
+            <span class="small-label">How it works</span>
+            <h2 class="section-title">Three steps. No theatre.</h2>
+            <ol class="steps">
+                <li><span class="step-num">01</span><div><h4>Tell us about it</h4><p>A short form, or upload your title. Two minutes.</p></div></li>
+                <li><span class="step-num">02</span><div><h4>Receive a written offer</h4><p>Within 24 hours, valid for 7 days. Based on auction comps and current market data.</p></div></li>
+                <li><span class="step-num">03</span><div><h4>Get paid</h4><p>Same-day wire or certified cheque once paperwork clears. We handle title, lien payoff, and DMV.</p></div></li>
+            </ol>
+            <ul class="bullets">
+                <li><i class="fa-solid fa-check"></i> Free in-person or video appraisal</li>
+                <li><i class="fa-solid fa-check"></i> Consignment option available (you keep the upside)</li>
+                <li><i class="fa-solid fa-check"></i> Trade against any vehicle on our floor</li>
+            </ul>
+        </div>
+        <form class="sell-form" id="sell-form" data-testid="sell-form" novalidate>
+            <h3>Tell us about your vehicle</h3>
+            <div class="form-row two">
+                <div class="field"><label>Year</label><input required name="year" placeholder="2020" data-testid="sell-year" /></div>
+                <div class="field"><label>Make</label><input required name="make" placeholder="Mercedes-Benz" data-testid="sell-make" /></div>
+            </div>
+            <div class="form-row two">
+                <div class="field"><label>Model</label><input required name="model" placeholder="E 450" data-testid="sell-model" /></div>
+                <div class="field"><label>Mileage</label><input required name="mileage" placeholder="32,400" data-testid="sell-mileage" /></div>
+            </div>
+            <div class="form-row two">
+                <div class="field"><label>VIN (optional)</label><input name="vin" placeholder="17 characters" data-testid="sell-vin" /></div>
+                <div class="field"><label>Condition</label>
+                    <select name="condition" data-testid="sell-condition">
+                        <option>Excellent</option><option>Very Good</option><option>Good</option><option>Fair</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row two">
+                <div class="field"><label>Your Name</label><input required name="name" data-testid="sell-name" /></div>
+                <div class="field"><label>Email</label><input required type="email" name="email" data-testid="sell-email" /></div>
+            </div>
+            <div class="field"><label>Phone</label><input required name="phone" data-testid="sell-phone" /></div>
+            <button type="submit" class="btn btn-primary block" data-testid="sell-submit">Request Offer</button>
+        </form>
+    </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/sell.js"></script>
+</body>
+</html>

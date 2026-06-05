@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tailored finance facilities from 4.49% APR through eleven partner lenders." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/finance.css" />
+    <title data-bind data-title-suffix="Finance">Maison Avenir</title>
+    <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+</head>
+<body>
+<div id="root" style="display:none"></div>
+<div id="nav-root"></div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="crumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Finance</span></div>
+        <h1>Bespoke facilities, plainly explained.</h1>
+        <p>From conventional loans to balloon structures, we&rsquo;ll match you with the right lender.</p>
+    </div>
+</section>
+
+<section class="finance" data-testid="finance-section">
+    <div class="finance-grid">
+        <div class="calc" data-testid="finance-calculator">
+            <h3>Estimate your payment</h3>
+            <div class="calc-field">
+                <label>Vehicle price <output id="calc-price-out">$65,000</output></label>
+                <input type="range" id="calc-price" min="15000" max="250000" step="1000" value="65000" data-testid="calc-price" />
+            </div>
+            <div class="calc-field">
+                <label>Down payment <output id="calc-down-out">$10,000</output></label>
+                <input type="range" id="calc-down" min="0" max="100000" step="500" value="10000" data-testid="calc-down" />
+            </div>
+            <div class="calc-field">
+                <label>Term <output id="calc-term-out">60 months</output></label>
+                <input type="range" id="calc-term" min="24" max="84" step="12" value="60" data-testid="calc-term" />
+            </div>
+            <div class="calc-field">
+                <label>APR <output id="calc-apr-out">5.99%</output></label>
+                <input type="range" id="calc-apr" min="3" max="14" step="0.1" value="5.99" data-testid="calc-apr" />
+            </div>
+            <div class="calc-result">
+                <span class="calc-label">Est. monthly</span>
+                <span class="calc-value" id="calc-monthly" data-testid="calc-monthly">$1,062</span>
+            </div>
+            <button class="btn btn-primary block" data-action="open-finance" data-testid="finance-apply-btn">Apply for Financing</button>
+            <p class="calc-disc">For illustration. Actual rates depend on credit profile, term, and lender.</p>
+        </div>
+        <div class="finance-side">
+            <div class="finance-rate">
+                <span class="small-label">From</span>
+                <span class="big-rate">4.49<sup>%</sup></span>
+                <span class="small-label">APR &middot; well-qualified buyers</span>
+            </div>
+            <ul class="finance-bullets">
+                <li><i class="fa-solid fa-circle-check"></i> Eleven national lending partners</li>
+                <li><i class="fa-solid fa-circle-check"></i> Soft credit pull for pre-qualification</li>
+                <li><i class="fa-solid fa-circle-check"></i> Balloon, lease &amp; conventional structures</li>
+                <li><i class="fa-solid fa-circle-check"></i> First-time buyer &amp; non-resident programs</li>
+                <li><i class="fa-solid fa-circle-check"></i> Decisions typically within four business hours</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/finance.js"></script>
+</body>
+</html>
