@@ -182,7 +182,7 @@
                 return;
             }
             const card = e.target.closest(".car-card");
-            if (card) openVehicle(card.getAttribute("data-id"));
+            if (card) window.location.href = `car-detail.html?id=${card.getAttribute("data-id")}`;
         });
 
         // Deep link: buy.html#car-12 opens vehicle

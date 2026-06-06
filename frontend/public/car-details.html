@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Full vehicle details, specifications, and history." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/car-details.css" />
+    <title>Vehicle Detail — Maison Avenir</title>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<div id="vd-content" class="vd-page">
+
+    <!-- Breadcrumb -->
+    <div style="background:var(--c-cream);border-bottom:1px solid var(--c-line-gold);padding:14px 32px;">
+        <div style="max-width:var(--container);margin:0 auto;">
+            <div class="crumbs">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="buy.html">Inventory</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span id="crumb-title">Vehicle Detail</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Hero: Photo + Info ── -->
+    <section class="vd-hero" data-testid="vd-hero">
+
+        <!-- Gallery -->
+        <div class="vd-gallery">
+            <span class="vd-condition-badge" id="vd-condition">Pre-Owned</span>
+            <img class="vd-gallery-main" id="vd-photo" src="" alt="" />
+        </div>
+
+        <!-- Info Panel -->
+        <div class="vd-info">
+            <div>
+                <!-- Eyebrow -->
+                <div class="vd-eyebrow">
+                    <span class="small-label gold">Certified Pre-Owned</span>
+                    <span class="vd-year-badge" id="vd-year"></span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="vd-title" id="vd-title"></h1>
+
+                <!-- Exterior color -->
+                <p class="vd-ext-color">
+                    <span class="vd-color-dot" id="vd-color-dot"></span>
+                    <span id="vd-color-text"></span>
+                </p>
+
+                <!-- Price -->
+                <div class="vd-price-row">
+                    <span class="vd-price" id="vd-price" data-testid="vd-price"></span>
+                    <span class="vd-price-label">List price</span>
+                </div>
+
+                <!-- Quick specs strip -->
+                <div class="vd-quick-specs">
+                    <div class="vd-qs-item">
+                        <span class="vd-qs-val" id="qs-mileage" data-testid="qs-mileage">—</span>
+                        <span class="vd-qs-lbl">Mileage</span>
+                    </div>
+                    <div class="vd-qs-item">
+                        <span class="vd-qs-val" id="qs-drive" data-testid="qs-drive">—</span>
+                        <span class="vd-qs-lbl">Drivetrain</span>
+                    </div>
+                    <div class="vd-qs-item">
+                        <span class="vd-qs-val" id="qs-mpg" data-testid="qs-mpg">—</span>
+                        <span class="vd-qs-lbl">City / Hwy MPG</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="vd-actions" data-testid="vd-actions">
+                <button class="btn btn-primary" data-action="open-testdrive" data-testid="vd-testdrive-btn">
+                    Book a Test Drive <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="finance.html" class="btn btn-ghost" data-testid="vd-finance-btn">
+                    Finance This Vehicle
+                </a>
+                <a href="buy.html" class="btn btn-ghost" data-testid="vd-back-btn" style="font-size:10px;padding:10px 28px;opacity:0.6">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Inventory
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Full Specification Table ── -->
+    <section class="vd-specs-section" data-testid="vd-specs">
+        <span class="small-label">Full Specification</span>
+        <h2 class="section-title">Every detail, documented.</h2>
+
+        <div class="vd-specs-grid">
+            <!-- Vehicle -->
+            <div class="spec-group">
+                <h3>Vehicle</h3>
+                <div class="spec-row"><span class="spec-key">Year</span><span class="spec-val" id="spec-year">—</span></div>
+                <div class="spec-row"><span class="spec-key">Make</span><span class="spec-val" id="spec-make">—</span></div>
+                <div class="spec-row"><span class="spec-key">Model</span><span class="spec-val" id="spec-model">—</span></div>
+                <div class="spec-row"><span class="spec-key">Condition</span><span class="spec-val" id="spec-condition">—</span></div>
+                <div class="spec-row"><span class="spec-key">Mileage</span><span class="spec-val" id="spec-mileage">—</span></div>
+                <div class="spec-row"><span class="spec-key">VIN</span><span class="spec-val" id="spec-vin" style="font-size:12px;letter-spacing:0.06em">—</span></div>
+            </div>
+
+            <!-- Drivetrain & Efficiency -->
+            <div class="spec-group">
+                <h3>Drivetrain &amp; Efficiency</h3>
+                <div class="spec-row"><span class="spec-key">Drivetrain</span><span class="spec-val" id="spec-drivetrain">—</span></div>
+                <div class="spec-row"><span class="spec-key">Transmission</span><span class="spec-val" id="spec-transmission">—</span></div>
+                <div class="spec-row"><span class="spec-key">Fuel Type</span><span class="spec-val" id="spec-fuel">—</span></div>
+                <div class="spec-row"><span class="spec-key">City MPG</span><span class="spec-val" id="spec-city-mpg">—</span></div>
+                <div class="spec-row"><span class="spec-key">Highway MPG</span><span class="spec-val" id="spec-hwy-mpg">—</span></div>
+            </div>
+
+            <!-- Colors -->
+            <div class="spec-group">
+                <h3>Colours</h3>
+                <div class="spec-row"><span class="spec-key">Exterior</span><span class="spec-val" id="spec-ext-color">—</span></div>
+                <div class="spec-row"><span class="spec-key">Interior</span><span class="spec-val" id="spec-int-color">—</span></div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="spec-group">
+                <h3>Pricing</h3>
+                <div class="spec-row"><span class="spec-key">List Price</span><span class="spec-val" id="spec-price" style="font-family:var(--f-serif);font-size:1.1rem">—</span></div>
+                <div class="spec-row">
+                    <span class="spec-key">Finance from</span>
+                    <span class="spec-val"><a href="finance.html" style="color:var(--c-gold);font-size:12px;letter-spacing:0.1em">4.49% APR →</a></span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Inspection</span>
+                    <span class="spec-val" style="font-size:12px">187-point certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Vehicle History + Recalls ── -->
+    <section class="vd-history-section" data-testid="vd-history">
+        <div class="vd-history-inner">
+
+            <!-- CarFax / History panel -->
+            <div class="history-panel">
+                <span class="small-label">Vehicle History</span>
+                <h3>Transparent from day one.</h3>
+                <p>
+                    Every vehicle in our collection carries a clean title and has been independently
+                    inspected across 187 points. We provide full ownership and service history
+                    documentation upon request.
+                </p>
+                <p style="font-size:12px;color:var(--c-ink-3);margin-bottom:18px">
+                    VIN: <span class="vin-display" style="font-family:monospace;letter-spacing:0.06em"></span>
+                </p>
+                <a
+                        id="carfax-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-ghost"
+                        data-testid="carfax-link"
+                        style="font-size:10px;padding:12px 22px"
+                >
+                    <i class="fa-solid fa-shield-halved"></i> View Free CarFax Report
+                </a>
+                <p style="font-size:11px;color:var(--c-ink-3);margin-top:10px">
+                    Opens CarFax.com — no account required for basic lookup.
+                </p>
+            </div>
+
+            <!-- NHTSA Recalls panel -->
+            <div class="history-panel">
+                <span class="small-label">Safety Recalls</span>
+                <h3>NHTSA recall check.</h3>
+                <p>
+                    Live data pulled from the National Highway Traffic Safety Administration federal
+                    database. Results are current as of today and cover all open safety campaigns.
+                </p>
+                <div id="recalls-container">
+                    <p class="recalls-loading">Loading…</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Similar Vehicles ── -->
+    <section class="vd-similar-section" data-testid="vd-similar">
+        <span class="small-label">You May Also Like</span>
+        <h2 class="section-title">Similar vehicles on the floor.</h2>
+        <div class="vd-similar-grid" id="similar-grid"></div>
+        <div style="text-align:center;margin-top:40px">
+            <a href="buy.html" class="btn btn-ghost" data-testid="vd-view-all-btn">
+                View All 44 Vehicles
+            </a>
+        </div>
+    </section>
+
+</div><!-- #vd-content -->
+
+<div id="footer-root"></div>
+
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/car-detail.js"></script>
+<script>
+    /* Wire up CarFax link after data loads */
+    document.addEventListener("DOMContentLoaded", function () {
+        const id = new URLSearchParams(location.search).get("id");
+        if (!id || !window.INVENTORY) return;
+        const car = window.INVENTORY.find(c => c.id === Number(id));
+        if (!car) return;
+        const link = document.getElementById("carfax-link");
+        if (link) link.href = `https://www.carfax.com/VehicleHistory/p/Report.cfx?partner=VAU_0&vin=${encodeURIComponent(car.vin)}`;
+    });
+</script>
+
+</body>
+</html>
