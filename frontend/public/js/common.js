@@ -238,7 +238,6 @@
     document.addEventListener("DOMContentLoaded", () => {
         injectNav();
         injectFooter();
-        injectEmergentBadge();
         applyBrand();
         highlightActiveNav();
         bindBurger();
